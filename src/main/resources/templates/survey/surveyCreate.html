@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="POST" th:action="@{/survey/createSurvey/}">
+        <label for="surveyName">Enter name::</label><br>
+        <input type="text" id="surveyName" name="surveyName"><br>
+        <input type="submit" value="add survey">
+    </form>
+
+</div>
+<a th:href="@{/home}">Go back</a>
+</body>
+</html>

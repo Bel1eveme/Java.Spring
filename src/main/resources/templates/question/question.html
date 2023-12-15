@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+</head>
+<body>
+<div th:text="${question.getQuestionName()}"></div>
+<form method = "POST" th:action="@{/survey/nextQuestion}" th:object="${question}">
+    <input type="hidden" th:field="*{id}">
+    <input type="hidden" th:field="*{questionName}">
+    <div>
+        <div th:each="answer,iter : ${question.getAnswers()}">
+            <input th:if="${(iter.index == chosenAnswerIndex)}" type="radio" th:field="*{answers}" th:value="${answer.id}" checked="checked">
+            <input th:unless="${(iter.index == chosenAnswerIndex)}" type="radio" th:field="*{answers}" th:value="${answer.id}">
+            <label th:text="${answer.getText()}"></label>
+        </div>
+    </div>
+    <input type="submit" value="next question">
+</form>
+<form method = "POST" th:action="@{survey/previousQuestion}">
+    <input type="submit" value = "previous question">
+</form>
+<a th:href="@{/home}">home</a>
+</body>
+</html>

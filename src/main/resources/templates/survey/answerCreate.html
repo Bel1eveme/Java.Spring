@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="POST" th:action="@{/survey/createAnswer/{id}(id=${answer.getId()})}">
+        <label for="answer">Enter question:</label><br>
+        <input type="text" id="answer" name="answer" value="${}}"><br>
+        <input type="submit" value="add answer">
+    </form>
+
+</div>
+<a th:href="@{/home}">Go back</a>
+</body>
+</html>

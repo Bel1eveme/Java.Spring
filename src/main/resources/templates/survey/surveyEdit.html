@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <!--<form method="POST" th:action="@{/survey/surveyEdit/{}">
+        <label for="question">Enter question:</label><br>
+        <input type="text" id="question" name="survey" value="${}}"><br>
+        <input type="submit" value="add question">
+    </form>-->
+    <div th:each="question : ${survey}">
+        <p th:text="${survey.getName()}"></p>
+        <a th:href="@{/survey/createAnswer/{id}(id=${survey.get().getId()})}">add answer</a>
+    </div>
+</div>
+<a th:href="@{/survey/surveyEdit/{id}(id=${survey.get().getId()})}">Add question</a>
+<a th:href="@{/home}">Go back</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div th:text="${user.getUsername()}"></div>
+<a th:href="@{/survey/list}">survey list</a>
+<a th:href="@{/home/completedSurveys}">completed surveys</a>
+<!--<a th:if = "${isAdmin}" th:href="@{/createSuvey}">Create survey</a>-->
+<a th:href="@{/createSuvey}">Create survey</a>
+<a th:href="@{/logout}">logout</a>
+</body>
+</html>
